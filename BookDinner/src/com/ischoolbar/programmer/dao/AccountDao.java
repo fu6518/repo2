@@ -1,0 +1,26 @@
+package com.ischoolbar.programmer.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
+
+import com.ischoolbar.programmer.entity.Account;
+/**
+ * 客户信息dao
+ * @author llq
+ *
+ */
+@Repository
+public interface AccountDao {
+	public int add(Account account);
+	public int edit(Account account);
+	public List<Account> findList(Map<String, Object> queryMap);
+	public Integer getTotal(Map<String, Object> queryMap);
+	public int delete(Long id);
+	public Account findByName(String name);
+	
+	@Select("select * from myfood")
+	public List<Account> findAll();
+}
